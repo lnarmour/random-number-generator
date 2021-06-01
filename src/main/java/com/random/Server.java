@@ -1,6 +1,6 @@
 package com.random;
 
-import java.util.Random
+import java.util.Random;
 import static spark.Spark.*;
 
 class Server {
@@ -11,7 +11,7 @@ class Server {
         port(serverPort);
         redirect.get("/", "/index.html");
         path("/api", () -> {
-            get("/random", (req, res) -> processHttpRequest(req, res));
+            get("/random", (req, res) -> processHttpRequest(res));
         });
     }
 
