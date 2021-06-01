@@ -1,0 +1,18 @@
+apiVersion: 1.0.0
+metadata:
+  name: rand
+projects:
+  - name: random-number-generator
+    source:
+      location: 'https://github.com/lnarmour/random-number-generator.git'
+      type: git
+      branch: main
+components:
+  - mountSources: true
+    memoryLimit: 1536M
+    type: dockerimage
+    volumes:
+      - name: '${CHE_PROJECT_ROOT}'
+        containerPath: /root/asdf
+    image: 'narmour/build-env:latest'
+    alias: my-proj-build-env
