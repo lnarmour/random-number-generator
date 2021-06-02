@@ -1,6 +1,7 @@
 package com.random;
 
 import java.util.Random;
+import java.time.LocalDateTime;
 import static spark.Spark.*;
 
 class Server {
@@ -18,6 +19,8 @@ class Server {
     private String processHttpRequest(spark.Response res) {
         res.type("application/json");
         res.status(200);
-        return "{\"value\": \"" + r.nextInt(1000) + "\"}";
+        String ret = "{\"value\": \"" + r.nextInt(1000) + "\"}";
+        System.out.println("[" + LocalDateTime.now() + "] -> " + ret);
+        return ret;
     }
 }
