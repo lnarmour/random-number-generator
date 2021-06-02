@@ -9,7 +9,7 @@ class Server {
 
     Server(int serverPort) {
         port(serverPort);
-        redirect.get("/", "/index.html");
+        redirect.get("/", "/api/random");
         path("/api", () -> {
             get("/random", (req, res) -> processHttpRequest(res));
         });
