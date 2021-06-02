@@ -1,6 +1,6 @@
 apiVersion: 1.0.0
 metadata:
-  name: rand
+  name: rand-
 projects:
   - name: random-number-generator
     source:
