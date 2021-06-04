@@ -19,7 +19,7 @@ class Server {
     private String processHttpRequest(spark.Response res) {
         res.type("application/json");
         res.status(200);
-        String ret = "{\"value\": \"" + r.nextInt(1000) + "\"}";
+        String ret = "{\"num\": \"" + r.nextInt(1000) + "\"}";
         System.out.println("[" + LocalDateTime.now() + "] -> " + ret);
         return ret;
     }
